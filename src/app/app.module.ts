@@ -8,9 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { EventComponent } from './event/event.component';
 import { DatePipe } from './services/date-pipe/date.pipe';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe, HeaderComponent],
+  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe, HeaderComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

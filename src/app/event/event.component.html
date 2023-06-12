@@ -4,10 +4,10 @@
     <div>
       <ul class="action-buttons">
         <li>
-          <a class="edit-button"><i class="fa fa-edit"></i></a>
+          <a class="edit-button"><i class="fas fa-edit"></i></a>
         </li>
         <li>
-          <a class="delete-button"><i class="fa fa-trash"></i></a>
+          <a class="delete-button"><i class="fas fa-trash"></i></a>
         </li>
       </ul>
     </div>
@@ -25,7 +25,7 @@
         (mouseover)="showDescription = true"
         (mouseleave)="showDescription = false"
       >
-        <i class="fa fa-info-circle"></i>
+        <i class="fas fa-info-circle"></i>
         <div class="description-hover" *ngIf="showDescription">
           {{ event?.description }}
         </div>
@@ -36,7 +36,7 @@
         (mouseover)="showPrice = true"
         (mouseleave)="showPrice = false"
       >
-        <i class="fa fa-dollar"></i>
+        <i class="fas fa-dollar-sign"></i>
         <div class="price-hover" *ngIf="showPrice">${{ event?.price }}</div>
       </div>
 
@@ -45,7 +45,7 @@
         (mouseover)="showCapacity = true"
         (mouseleave)="showCapacity = false"
       >
-        <i class="fa fa-users"></i>
+        <i class="fas fa-users"></i>
         <div class="capacity-hover" *ngIf="showCapacity">
           {{ event?.capacity?.actualCapacity }}/{{
             event?.capacity?.maxCapacity

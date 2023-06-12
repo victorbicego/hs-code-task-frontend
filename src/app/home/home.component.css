@@ -25,3 +25,10 @@
   padding: 0;
   margin: 0;
 }
+
+.footer {
+  grid-area: footer;
+  background-color: #005f7f;
+  border-top: 5px solid #5fd0df;
+  padding: 0 200px;
+}
