@@ -9,6 +9,11 @@
     "footer footer footer footer footer";
 }
 
+.header {
+  grid-area: header;
+  padding: 0 200px;
+}
+
 .events-container {
   grid-area: events;
   margin-left: 200px;
