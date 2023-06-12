@@ -1,0 +1,16 @@
+.home-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header header"
+    "events events events events right-panel"
+    "events events events events right-panel"
+    "footer footer footer footer footer";
+}
+
+.events-container {
+  grid-area: events;
+  margin-left: 200px;
+  padding: 20px 20px 0 20px;
+}
