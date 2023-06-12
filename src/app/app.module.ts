@@ -11,9 +11,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DeleteEventModalComponent } from './delete-event-modal/delete-event-modal.component';
 import { RightPanelComponent } from './right-panel/right-panel.component';
+import { CreateEventModalComponent } from './create-event-modal/create-event-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe, HeaderComponent, FooterComponent, DeleteEventModalComponent, RightPanelComponent],
+  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe, HeaderComponent, FooterComponent, DeleteEventModalComponent, RightPanelComponent, CreateEventModalComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
