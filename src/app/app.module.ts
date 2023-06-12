@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { EventComponent } from './event/event.component';
+import { DatePipe } from './services/date-pipe/date.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, EventComponent],
+  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

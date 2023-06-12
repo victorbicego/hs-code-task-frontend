@@ -14,7 +14,7 @@
   </div>
   <div class="row">
     <div>
-      <p class="time">{{ event?.timeInterval }}</p>
+      <p class="time">{{ event!.timeInterval | date }}</p>
       <p class="address">
         {{ event?.address?.street }}, {{ event?.address?.immobileNumber }},
         {{ event?.address?.city }}, {{ event?.address?.postalCode }}
