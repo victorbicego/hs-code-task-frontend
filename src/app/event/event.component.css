@@ -1,0 +1,111 @@
+.event-card {
+  border: 1px solid #5fd0df;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #effafc;
+  margin-bottom: 20px;
+}
+
+.event-card h2 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Unica One, cursive;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.event-card p {
+  margin: 5px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.edit-button,
+.delete-button {
+  cursor: pointer;
+  font-size: 16px;
+  color: #005f7f;
+  margin: 0 5px 0 5px;
+  padding: 0;
+}
+
+.edit-button :hover,
+.delete-button :hover {
+  color: #5fd0df;
+}
+
+.edit-button:active {
+  font-size: 17px;
+}
+
+.delete-button:active {
+  font-size: 17px;
+  margin: 0 5px 0 4px;
+}
+
+.time {
+  color: #005f7f;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.address {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.info-icon,
+.price-icon,
+.capacity-icon {
+  display: inline-block;
+  position: relative;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.description-hover,
+.price-hover,
+.capacity-hover {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  z-index: 1;
+}
+
+.info-icon:hover .description-hover,
+.price-icon:hover .price-hover,
+.capacity-icon:hover .capacity-hover {
+  display: block;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.subscribe-button {
+  background-color: #005f7f;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  font-family: Unica One, cursive;
+  cursor: pointer;
+  border-radius: 4px;
+}

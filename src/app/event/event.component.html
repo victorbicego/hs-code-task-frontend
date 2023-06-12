@@ -1,1 +1,60 @@
-<p>event works!</p>
+<div class="event-card">
+  <div class="row">
+    <h2>{{ event?.title }}</h2>
+    <div>
+      <ul class="action-buttons">
+        <li>
+          <a class="edit-button"><i class="fa fa-edit"></i></a>
+        </li>
+        <li>
+          <a class="delete-button"><i class="fa fa-trash"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <p class="time">{{ event?.timeInterval }}</p>
+      <p class="address">
+        {{ event?.address?.street }}, {{ event?.address?.immobileNumber }},
+        {{ event?.address?.city }}, {{ event?.address?.postalCode }}
+      </p>
+
+      <div
+        class="info-icon"
+        (mouseover)="showDescription = true"
+        (mouseleave)="showDescription = false"
+      >
+        <i class="fa fa-info-circle"></i>
+        <div class="description-hover" *ngIf="showDescription">
+          {{ event?.description }}
+        </div>
+      </div>
+
+      <div
+        class="price-icon"
+        (mouseover)="showPrice = true"
+        (mouseleave)="showPrice = false"
+      >
+        <i class="fa fa-dollar"></i>
+        <div class="price-hover" *ngIf="showPrice">${{ event?.price }}</div>
+      </div>
+
+      <div
+        class="capacity-icon"
+        (mouseover)="showCapacity = true"
+        (mouseleave)="showCapacity = false"
+      >
+        <i class="fa fa-users"></i>
+        <div class="capacity-hover" *ngIf="showCapacity">
+          {{ event?.capacity?.actualCapacity }}/{{
+            event?.capacity?.maxCapacity
+          }}
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="subscribe-button">JOIN THIS EVENT</button>
+    </div>
+  </div>
+</div>

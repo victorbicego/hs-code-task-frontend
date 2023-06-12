@@ -8,4 +8,8 @@ import { Event } from '../interfaces/event';
 })
 export class EventComponent {
   @Input() event?: Event;
+
+  showDescription: boolean = false;
+  showPrice: boolean = false;
+  showCapacity: boolean = false;
 }
