@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Event } from '../interfaces/event';
 
 @Component({
@@ -8,6 +8,7 @@ import { Event } from '../interfaces/event';
 })
 export class EventComponent {
   @Input() event?: Event;
+  @Output() eventDeleted: EventEmitter<number> = new EventEmitter<number>();
 
   showDescription: boolean = false;
   showPrice: boolean = false;
@@ -16,5 +17,9 @@ export class EventComponent {
 
   handleCloseDeleteEventModal(): void {
     this.showDeleteEventModal = false;
+  }
+
+  handleDeleteEvent(): void {
+    this.eventDeleted.emit(this.event?.id);
   }
 }
