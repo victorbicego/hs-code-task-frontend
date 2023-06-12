@@ -39,3 +39,15 @@
   border-top: 5px solid #5fd0df;
   padding: 0 200px;
 }
+
+.new-event-button {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Unica One, cursive;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #5fd0df;
+  margin-bottom: 20px;
+}
