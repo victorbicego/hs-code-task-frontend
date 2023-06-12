@@ -15,6 +15,11 @@
   padding: 0 200px;
 }
 
+.right-panel {
+  grid-area: right-panel;
+  margin-right: 200px;
+}
+
 .events-container {
   grid-area: events;
   margin-left: 200px;

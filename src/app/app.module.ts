@@ -10,9 +10,10 @@ import { DatePipe } from './services/date-pipe/date.pipe';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DeleteEventModalComponent } from './delete-event-modal/delete-event-modal.component';
+import { RightPanelComponent } from './right-panel/right-panel.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe, HeaderComponent, FooterComponent, DeleteEventModalComponent],
+  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe, HeaderComponent, FooterComponent, DeleteEventModalComponent, RightPanelComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
