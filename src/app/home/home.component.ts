@@ -42,4 +42,8 @@ export class HomeComponent implements OnInit {
   openCreateEventPopup(): void {
     this.showCreateEventModal = true;
   }
+
+  handleCloseCreateEventModal(): void {
+    this.showCreateEventModal = false;
+  }
 }

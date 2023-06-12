@@ -21,4 +21,5 @@
 <app-create-event-modal
   *ngIf="showCreateEventModal"
   class="create-event-modal"
+  (closeModalEvent)="handleCloseCreateEventModal()"
 ></app-create-event-modal>
