@@ -11,6 +11,9 @@
       </li>
     </ul>
     <p *ngIf="events.length == 0">No events available.</p>
+    <button class="new-event-button" (click)="openCreateEventPopup()">
+      Add New Event
+    </button>
   </div>
   <app-footer class="footer"></app-footer>
 </div>

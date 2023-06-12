@@ -9,6 +9,7 @@ import { EventService } from '../services/event-service/event.service';
 })
 export class HomeComponent implements OnInit {
   events: Event[] = [];
+  showCreateEventModal: boolean = false;
 
   constructor(private eventService: EventService) {}
 
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
     this.getAllEvents();
   }
 
-  private getAllEvents() {
+  private getAllEvents(): void {
     this.eventService.getAllEvents().subscribe(
       (events) => {
         this.events = events;
@@ -36,5 +37,9 @@ export class HomeComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  openCreateEventPopup(): void {
+    this.showCreateEventModal = true;
   }
 }
