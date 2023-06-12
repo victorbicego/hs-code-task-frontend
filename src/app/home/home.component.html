@@ -2,7 +2,9 @@
   //HEADER //RIGHT PANEL
   <div class="events-container">
     <ul *ngIf="events.length > 0">
-      <li><app-event></app-event></li>
+      <li *ngFor="let event of events">
+        <app-event [event]="event"></app-event>
+      </li>
     </ul>
     <p *ngIf="events.length == 0">No events available.</p>
   </div>
