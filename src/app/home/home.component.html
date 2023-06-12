@@ -1,10 +1,10 @@
 <div class="home-container">
   //HEADER //RIGHT PANEL
   <div class="events-container">
-    <ul>
-      <li>//EVENT CARD</li>
+    <ul *ngIf="events.length > 0">
+      <li><app-event></app-event></li>
     </ul>
-    <p>No events available.</p>
+    <p *ngIf="events.length == 0">No events available.</p>
   </div>
   //FOOTER
 </div>
