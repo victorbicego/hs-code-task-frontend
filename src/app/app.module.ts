@@ -12,10 +12,26 @@ import { FooterComponent } from './footer/footer.component';
 import { DeleteEventModalComponent } from './delete-event-modal/delete-event-modal.component';
 import { RightPanelComponent } from './right-panel/right-panel.component';
 import { CreateEventModalComponent } from './create-event-modal/create-event-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe, HeaderComponent, FooterComponent, DeleteEventModalComponent, RightPanelComponent, CreateEventModalComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    EventComponent,
+    DatePipe,
+    HeaderComponent,
+    FooterComponent,
+    DeleteEventModalComponent,
+    RightPanelComponent,
+    CreateEventModalComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
