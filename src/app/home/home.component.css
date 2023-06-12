@@ -18,6 +18,7 @@
 .right-panel {
   grid-area: right-panel;
   margin-right: 200px;
+  padding: 20px 0;
 }
 
 .events-container {
