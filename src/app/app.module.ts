@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { EventComponent } from './event/event.component';
 import { DatePipe } from './services/date-pipe/date.pipe';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe],
+  declarations: [AppComponent, HomeComponent, EventComponent, DatePipe, HeaderComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
