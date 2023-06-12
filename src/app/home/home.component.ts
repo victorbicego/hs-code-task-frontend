@@ -26,4 +26,15 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+
+  subscribeToEventDeleted(eventId: number): void {
+    this.eventService.deleteEvent(eventId).subscribe(
+      () => {
+        this.getAllEvents();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
 }

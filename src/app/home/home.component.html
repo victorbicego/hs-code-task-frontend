@@ -4,7 +4,10 @@
   <div class="events-container">
     <ul *ngIf="events.length > 0">
       <li *ngFor="let event of events">
-        <app-event [event]="event"></app-event>
+        <app-event
+          [event]="event"
+          (eventDeleted)="subscribeToEventDeleted($event)"
+        ></app-event>
       </li>
     </ul>
     <p *ngIf="events.length == 0">No events available.</p>
