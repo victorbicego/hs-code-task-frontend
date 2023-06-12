@@ -12,4 +12,9 @@ export class EventComponent {
   showDescription: boolean = false;
   showPrice: boolean = false;
   showCapacity: boolean = false;
+  showDeleteEventModal: boolean = false;
+
+  handleCloseDeleteEventModal(): void {
+    this.showDeleteEventModal = false;
+  }
 }

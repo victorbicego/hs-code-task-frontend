@@ -1,3 +1,8 @@
+.delete-event-modal {
+  position: absolute;
+  top: 100px;
+}
+
 .event-card {
   border: 1px solid #5fd0df;
   border-radius: 5px;

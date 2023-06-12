@@ -1,3 +1,8 @@
+<app-delete-event-modal
+  *ngIf="showDeleteEventModal"
+  class="delete-event-modal"
+></app-delete-event-modal>
+
 <div class="event-card">
   <div class="row">
     <h2>{{ event?.title }}</h2>
@@ -7,7 +12,9 @@
           <a class="edit-button"><i class="fas fa-edit"></i></a>
         </li>
         <li>
-          <a class="delete-button"><i class="fas fa-trash"></i></a>
+          <a class="delete-button" (click)="showDeleteEventModal = true"
+            ><i class="fas fa-trash"></i
+          ></a>
         </li>
       </ul>
     </div>
