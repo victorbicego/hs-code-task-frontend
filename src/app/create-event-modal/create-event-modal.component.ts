@@ -38,7 +38,6 @@ export class CreateEventModalComponent {
   }
 
   validate(): boolean {
-    console.log(this.eventForm.get('title'));
     const address = this.eventForm.get('address');
     const capacity = this.eventForm.get('capacity');
     const timeInterval = this.eventForm.get('timeInterval');

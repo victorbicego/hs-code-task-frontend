@@ -2,7 +2,7 @@
   <div class="create-modal">
     <span class="close" (click)="closeModal()">&times;</span>
 
-    <form [formGroup]="eventForm">
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
       <label>Title:</label>
       <input type="text" formControlName="title" class="form-control" />
 
@@ -12,52 +12,52 @@
       <label>Description:</label>
       <textarea formControlName="description" class="form-control"></textarea>
 
-      <label>Street:</label>
-      <input
-        type="text"
-        formControlName="address.street"
-        class="form-control"
-      />
+      <div formGroupName="address">
+        <label>Street:</label>
+        <input type="text" formControlName="street" class="form-control" />
 
-      <label>Immobile Number:</label>
-      <input
-        type="text"
-        formControlName="address.immobileNumber"
-        class="form-control"
-      />
+        <label>Immobile Number:</label>
+        <input
+          type="text"
+          formControlName="immobileNumber"
+          class="form-control"
+        />
 
-      <label>City:</label>
-      <input type="text" formControlName="address.city" class="form-control" />
+        <label>City:</label>
+        <input type="text" formControlName="city" class="form-control" />
 
-      <label>Postal Code:</label>
-      <input
-        type="text"
-        formControlName="address.postalCode"
-        class="form-control"
-      />
+        <label>Postal Code:</label>
+        <input type="text" formControlName="postalCode" class="form-control" />
+      </div>
 
-      <label>Start Time:</label>
-      <input
-        type="text"
-        formControlName="timeInterval.startTime"
-        class="form-control"
-      />
+      <div formGroupName="timeInterval">
+        <label>Start Time:</label>
+        <input
+          type="datetime-local"
+          formControlName="startTime"
+          class="form-control"
+        />
 
-      <label>End Time:</label>
-      <input
-        type="text"
-        formControlName="timeInterval.endTime"
-        class="form-control"
-      />
+        <label>End Time:</label>
+        <input
+          type="datetime-local"
+          formControlName="endTime"
+          class="form-control"
+        />
+      </div>
 
-      <label>Max Capacity:</label>
-      <input
-        type="number"
-        formControlName="capacity.maxCapacity"
-        class="form-control"
-      />
+      <div formGroupName="capacity">
+        <label>Max Capacity:</label>
+        <input
+          type="number"
+          formControlName="maxCapacity"
+          class="form-control"
+        />
+      </div>
+
+      <div class="button-container">
+        <button [disabled]="!validate()" type="submit">Create Event</button>
+      </div>
     </form>
-
-    <button [disabled]="!validate()" (click)="onSubmit()">Create Event</button>
   </div>
 </div>
