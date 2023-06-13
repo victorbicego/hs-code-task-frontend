@@ -9,6 +9,8 @@ import { Event } from '../interfaces/event';
 export class EventComponent {
   @Input() event?: Event;
   @Output() eventDeleted: EventEmitter<number> = new EventEmitter<number>();
+  @Output() eventEdited: EventEmitter<void> = new EventEmitter<void>();
+  showCreateEventModal: boolean = false;
 
   showDescription: boolean = false;
   showPrice: boolean = false;
@@ -21,5 +23,14 @@ export class EventComponent {
 
   handleDeleteEvent(): void {
     this.eventDeleted.emit(this.event?.id);
+  }
+
+  handleCloseCreateEventModal(): void {
+    this.showCreateEventModal = false;
+  }
+
+  handleCreateEventModal(): void {
+    this.handleCloseCreateEventModal();
+    this.eventEdited.emit();
   }
 }

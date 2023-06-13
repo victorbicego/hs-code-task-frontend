@@ -51,4 +51,8 @@ export class HomeComponent implements OnInit {
     this.getAllEvents();
     this.handleCloseCreateEventModal();
   }
+
+  handleEditedEvent(): void {
+    this.getAllEvents();
+  }
 }

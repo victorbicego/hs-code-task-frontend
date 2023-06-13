@@ -12,7 +12,6 @@ export class CreateEventModalComponent implements OnInit {
   @Output() closeModalEvent: EventEmitter<void> = new EventEmitter<void>();
   @Output() createdModalEvent: EventEmitter<void> = new EventEmitter<void>();
   @Input() eventInput?: Event;
-  eventId?: number;
 
   eventForm: FormGroup = this.formBuilder.group({
     title: ['', Validators.required],
@@ -40,8 +39,6 @@ export class CreateEventModalComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.eventInput) {
-      this.eventId = this.eventInput.id;
-
       const event = this.eventInput;
 
       this.eventForm.patchValue({
@@ -89,6 +86,10 @@ export class CreateEventModalComponent implements OnInit {
           maxCapacity: this.eventForm.get('capacity.maxCapacity')?.value,
         },
       };
+
+      if (this.eventInput) {
+        event.id = this.eventInput.id;
+      }
 
       this.eventService.createEvent(event).subscribe(
         (response) => {

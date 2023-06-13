@@ -5,13 +5,23 @@
   (confirmDelete)="handleDeleteEvent()"
 ></app-delete-event-modal>
 
+<app-create-event-modal
+  *ngIf="showCreateEventModal"
+  class="create-event-modal"
+  (closeModalEvent)="handleCloseCreateEventModal()"
+  (createdModalEvent)="handleCreateEventModal()"
+  [eventInput]="event"
+></app-create-event-modal>
+
 <div class="event-card">
   <div class="row">
     <h2>{{ event?.title }}</h2>
     <div>
       <ul class="action-buttons">
         <li>
-          <a class="edit-button"><i class="fas fa-edit"></i></a>
+          <a class="edit-button" (click)="showCreateEventModal = true"
+            ><i class="fas fa-edit"></i
+          ></a>
         </li>
         <li>
           <a class="delete-button" (click)="showDeleteEventModal = true"
