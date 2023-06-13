@@ -16,11 +16,14 @@ export class EventService {
   }
 
   deleteEvent(eventId: number): Observable<any> {
-    const url = `${this.apiUrl}/${eventId}`;
-    return this.httpClient.delete(url);
+    return this.httpClient.delete(`${this.apiUrl}/${eventId}`);
   }
 
   createEvent(event: Event): Observable<Event> {
     return this.httpClient.put<Event>(this.apiUrl, event);
+  }
+
+  subscribeToEvent(event: Event): Observable<Event> {
+    return this.httpClient.put<Event>(`${this.apiUrl}/subscribe`, event);
   }
 }

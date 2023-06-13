@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Event } from '../interfaces/event';
+import { EventService } from '../services/event-service/event.service';
 
 @Component({
   selector: 'app-event',
@@ -18,6 +19,8 @@ export class EventComponent {
   showCreateEventModal: boolean = false;
   showNoSeatAvailableModal: boolean = false;
 
+  constructor(private eventService: EventService) {}
+
   handleCloseDeleteEventModal(): void {
     this.showDeleteEventModal = false;
   }
@@ -35,5 +38,16 @@ export class EventComponent {
     this.eventEdited.emit();
   }
 
-  subscribeAttendantToEvent(): void {}
+  subscribeAttendantToEvent(): void {
+    this.eventService.subscribeToEvent(this.event!).subscribe(
+      (response) => {
+        console.log(response);
+        this.eventEdited.emit();
+      },
+      (error) => {
+        this.showNoSeatAvailableModal = true;
+        console.error(error);
+      }
+    );
+  }
 }
