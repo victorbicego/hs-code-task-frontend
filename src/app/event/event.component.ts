@@ -10,12 +10,13 @@ export class EventComponent {
   @Input() event?: Event;
   @Output() eventDeleted: EventEmitter<number> = new EventEmitter<number>();
   @Output() eventEdited: EventEmitter<void> = new EventEmitter<void>();
-  showCreateEventModal: boolean = false;
 
   showDescription: boolean = false;
   showPrice: boolean = false;
   showCapacity: boolean = false;
   showDeleteEventModal: boolean = false;
+  showCreateEventModal: boolean = false;
+  showNoSeatAvailableModal: boolean = false;
 
   handleCloseDeleteEventModal(): void {
     this.showDeleteEventModal = false;
@@ -33,4 +34,6 @@ export class EventComponent {
     this.handleCloseCreateEventModal();
     this.eventEdited.emit();
   }
+
+  subscribeAttendantToEvent(): void {}
 }

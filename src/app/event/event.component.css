@@ -102,3 +102,19 @@
 .description-hover {
   width: 300px;
 }
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.subscribe-button {
+  background-color: #005f7f;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  font-family: Unica One, cursive;
+  cursor: pointer;
+  border-radius: 4px;
+}
