@@ -48,6 +48,7 @@ export class EventComponent {
       },
       (error) => {
         this.showNoSeatAvailableModal = true;
+        this.errorMessage = error.error.messages[0];
         console.error(error);
       }
     );
