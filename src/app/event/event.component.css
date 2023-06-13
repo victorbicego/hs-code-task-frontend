@@ -98,3 +98,7 @@
 .capacity-icon:hover .capacity-hover {
   display: block;
 }
+
+.description-hover {
+  width: 300px;
+}
