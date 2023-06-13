@@ -19,6 +19,8 @@ export class EventComponent {
   showCreateEventModal: boolean = false;
   showNoSeatAvailableModal: boolean = false;
 
+  errorMessage?: string;
+
   constructor(private eventService: EventService) {}
 
   handleCloseDeleteEventModal(): void {

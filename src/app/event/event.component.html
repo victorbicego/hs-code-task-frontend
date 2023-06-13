@@ -17,6 +17,7 @@
   *ngIf="showNoSeatAvailableModal"
   class="event-full-modal"
   (closeModalEvent)="handleCloseEventFullModal()"
+  [errorMessage]="errorMessage"
 ></app-event-full-modal>
 
 <div class="event-card">
