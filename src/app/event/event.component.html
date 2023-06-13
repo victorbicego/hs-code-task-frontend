@@ -13,6 +13,12 @@
   [eventInput]="event"
 ></app-create-event-modal>
 
+<app-event-full-modal
+  *ngIf="showNoSeatAvailableModal"
+  class="event-full-modal"
+  (closeModalEvent)="handleCloseEventFullModal()"
+></app-event-full-modal>
+
 <div class="event-card">
   <div class="row">
     <h2>{{ event?.title }}</h2>

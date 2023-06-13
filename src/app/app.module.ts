@@ -13,6 +13,7 @@ import { DeleteEventModalComponent } from './delete-event-modal/delete-event-mod
 import { RightPanelComponent } from './right-panel/right-panel.component';
 import { CreateEventModalComponent } from './create-event-modal/create-event-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EventFullModalComponent } from './event-full-modal/event-full-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DeleteEventModalComponent,
     RightPanelComponent,
     CreateEventModalComponent,
+    EventFullModalComponent,
   ],
   imports: [
     BrowserModule,

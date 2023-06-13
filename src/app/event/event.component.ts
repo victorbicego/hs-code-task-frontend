@@ -50,4 +50,8 @@ export class EventComponent {
       }
     );
   }
+
+  handleCloseEventFullModal(): void {
+    this.showNoSeatAvailableModal = false;
+  }
 }
