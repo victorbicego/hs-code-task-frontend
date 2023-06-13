@@ -3,10 +3,10 @@ import { Capacity } from './capacity';
 import { TimeInterval } from './time-interval';
 
 export interface Event {
-  id: number;
+  id?: number;
   title: string;
   price: number;
-  description: string;
+  description?: string;
   address: Address;
   timeInterval: TimeInterval;
   capacity: Capacity;

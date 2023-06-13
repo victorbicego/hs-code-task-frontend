@@ -19,4 +19,8 @@ export class EventService {
     const url = `${this.apiUrl}/${eventId}`;
     return this.httpClient.delete(url);
   }
+
+  createEvent(event: Event): Observable<Event> {
+    return this.httpClient.post<Event>(this.apiUrl, event);
+  }
 }

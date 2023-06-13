@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EventService } from '../services/event-service/event.service';
+import { Event } from '../interfaces/event';
 
 @Component({
   selector: 'app-create-event-modal',
@@ -8,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateEventModalComponent {
   @Output() closeModalEvent: EventEmitter<void> = new EventEmitter<void>();
+  @Output() createdModalEvent: EventEmitter<void> = new EventEmitter<void>();
   eventForm: FormGroup = this.formBuilder.group({
     title: ['', Validators.required],
     price: [null, Validators.required],
@@ -27,14 +30,46 @@ export class CreateEventModalComponent {
     }),
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private eventService: EventService
+  ) {}
 
   closeModal(): void {
     this.closeModalEvent.emit();
   }
 
   onSubmit(): void {
-    this.eventForm.reset();
+    if (this.eventForm.valid) {
+      const event: Event = {
+        title: this.eventForm.get('title')?.value,
+        price: this.eventForm.get('price')?.value,
+        description: this.eventForm.get('description')?.value,
+        address: {
+          street: this.eventForm.get('address.street')?.value,
+          immobileNumber: this.eventForm.get('address.immobileNumber')?.value,
+          city: this.eventForm.get('address.city')?.value,
+          postalCode: this.eventForm.get('address.postalCode')?.value,
+        },
+        timeInterval: {
+          startTime: this.eventForm.get('timeInterval.startTime')?.value,
+          endTime: this.eventForm.get('timeInterval.endTime')?.value,
+        },
+        capacity: {
+          maxCapacity: this.eventForm.get('capacity.maxCapacity')?.value,
+        },
+      };
+
+      this.eventService.createEvent(event).subscribe(
+        (response) => {
+          console.log(response);
+          this.createdModalEvent.emit();
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
   }
 
   validate(): boolean {
