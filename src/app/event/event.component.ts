@@ -43,7 +43,6 @@ export class EventComponent {
   subscribeAttendantToEvent(): void {
     this.eventService.subscribeToEvent(this.event!).subscribe(
       (response) => {
-        console.log(response);
         this.eventEdited.emit();
       },
       (error) => {
