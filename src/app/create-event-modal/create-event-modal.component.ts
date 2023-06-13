@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EventService } from '../services/event-service/event.service';
 import { Event } from '../interfaces/event';
@@ -8,9 +8,12 @@ import { Event } from '../interfaces/event';
   templateUrl: './create-event-modal.component.html',
   styleUrls: ['./create-event-modal.component.css'],
 })
-export class CreateEventModalComponent {
+export class CreateEventModalComponent implements OnInit {
   @Output() closeModalEvent: EventEmitter<void> = new EventEmitter<void>();
   @Output() createdModalEvent: EventEmitter<void> = new EventEmitter<void>();
+  @Input() eventInput?: Event;
+  eventId?: number;
+
   eventForm: FormGroup = this.formBuilder.group({
     title: ['', Validators.required],
     price: [null, Validators.required],
@@ -34,6 +37,33 @@ export class CreateEventModalComponent {
     private formBuilder: FormBuilder,
     private eventService: EventService
   ) {}
+
+  ngOnInit(): void {
+    if (this.eventInput) {
+      this.eventId = this.eventInput.id;
+
+      const event = this.eventInput;
+
+      this.eventForm.patchValue({
+        title: event.title,
+        price: event.price,
+        description: event.description,
+        address: {
+          street: event.address.street,
+          immobileNumber: event.address.immobileNumber,
+          city: event.address.city,
+          postalCode: event.address.postalCode,
+        },
+        timeInterval: {
+          startTime: event.timeInterval.startTime,
+          endTime: event.timeInterval.endTime,
+        },
+        capacity: {
+          maxCapacity: event.capacity.maxCapacity,
+        },
+      });
+    }
+  }
 
   closeModal(): void {
     this.closeModalEvent.emit();
